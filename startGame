@@ -1,1 +1,74 @@
+var currentScene = 0;
 
+var Button = function(config) {
+    this.x = config.x || 0;
+    this.y = config.y || 0;
+    this.width = config.width || 150;
+    this.height = config.height || 50;
+    this.label = config.label || "Click";
+    this.onClick = config.onClick || function() {};
+};
+
+Button.prototype.draw = function() {
+    fill(0, 234, 255);
+    rect(this.x, this.y, this.width, this.height, 5);
+    fill(0, 0, 0);
+    textSize(19);
+    textAlign(LEFT, TOP);
+    text(this.label, this.x+10, this.y+this.height/4);
+};
+
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+           mouseX < (this.x + this.width) &&
+           mouseY > this.y &&
+           mouseY < (this.y + this.height);
+};
+
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+
+var btn1 = new Button({
+    x: 100,
+    y: 342,
+    label: "Start Game!",
+    onClick: function() {
+        currentScene = 1;
+    }
+});
+
+var introScreen = function(){
+    fill(143, 81, 81);
+    rect(0, 0, 400, 400);
+    textSize(45);
+    fill(250, 245, 245);
+    textAlign(CENTER, CENTER);
+    text("Black Jack", 200, 117);
+    textSize(10);
+    text("The goal of blackjack is to beat the dealer's hand without going over 21.", 200,       198);
+    text("Face cards are worth 10.", 200, 225);
+    text("Each player starts with two cards, one of the dealer's cards is hidden until the end.", 200, 250);
+    text("To 'Hit' is to ask for another card.", 200, 278);
+    text("If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.",     200, 304);
+    btn1.draw();
+};
+
+//When mouse is clicked and released on the button the game starts
+mouseReleased = function() {
+if (currentScene === 0) {
+    btn1.handleMouseClick();
+}
+};
+
+//draws the introscreen
+draw = function() {
+if (currentScene === 0) {
+    introScreen();
+}
+else{
+background(143, 143, 143);
+}
+};
