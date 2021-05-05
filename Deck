@@ -1,25 +1,16 @@
-    var suits = ["Spades", "Hearts", "Diamonds", "Clubs"];
-    var values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
-    var deck = [];
+    var faces = ["Spades", "Hearts", "Diamonds", "Clubs"];
+    var cardNumbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"];
 
-    function createDeck()
+    function makeDeck()
     {
-        deck = [];
-        for (var i = 0 ; i < values.length; i++)
+        var deck = [];
+        for (var i = 0 ; i < cardNumbers.length; i++)
         {
-            for(var x = 0; x < suits.length; x++)
+            for(var y = 0; y < faces.length; y++)
             {
-                var weight = (values[i]);
-                if (values[i] === "J" || values[i] === "Q" || values[i] === "K")
-                    {
-                        weight = 10;
-                    }
-                if (values[i] === "A")
-                    {
-                        weight = 11;
-                    }
-                var card = { Value: values[i], Suit: suits[x], Weight: weight };
-                deck.push(card);
+            var card = {Value: cardNumbers[y], Face: faces[i]};
+			deck.push(card);
             }
         }
+        return deck;
     }
