@@ -1,0 +1,99 @@
+var userTotal = 100; // User's total bank (begginning amount)
+var tempBet = 0; //Holds the amount of the selected chip each round
+
+fill(0, 0, 0);
+text("Your Funds = " + userTotal, 10,15); //Displays funds at beggining of Game
+
+fill(87, 225, 235); // Chip Designs
+stroke(111, 153, 181);
+
+ellipse(296,340,35,35); //$5 Chip
+fill(0, 0, 0);
+text("$5",289,344);
+
+fill(227, 13, 13);
+ellipse(283,285,50,50); //$15 Chip
+fill(255, 255, 255);
+text("$15",272,281,30,30);
+
+fill(135, 82, 204);
+ellipse(343,252,60,60); //$20 Chip
+fill(255, 255, 255);
+text("$20",332,248,60,60);
+
+fill(89, 235, 99);
+ellipse(350,317,45,45); //$10 Chip
+fill(0, 0, 0);
+text("$10",339,313,60,60);
+    
+mouseClicked = function () { //Allows user to select betting amount each round
+    
+    if (mouseX >= 275 && mouseX <= 310 && mouseY >=317 && mouseY <=353) { //$5 Chip Button
+        
+        fill(0, 0, 0);
+        tempBet += 5;
+        userTotal -= 5;
+        fill(255, 255, 255);
+        stroke(255, 255, 255);
+        rect(1,0,150,20); //Covers previous user total amount
+        fill(0, 0, 0);
+        text("Your Funds = " + userTotal, 10, 15);//Displays updated user total each increase
+        fill(255, 255, 255);
+        stroke(255, 255, 255);
+        rect(1,20,150,20); //Covers previous user betting amount
+        fill(0, 0, 0);
+        text("Current Bet = " + tempBet, 10, 30);//Displays current bet amount
+        
+    }
+    
+    if (mouseX >= 329 && mouseX <= 369 && mouseY >=295 && mouseY <=335) { //$10 Chip Button
+        
+        fill(0, 0, 0);
+        tempBet += 10;
+        userTotal -= 10;
+        fill(255, 255, 255);
+        stroke(255, 255, 255);
+        rect(1,0,150,20); //Covers previous user total amount
+        fill(0, 0, 0);
+        text("Your Funds = " + userTotal, 10,15); //Displays updated user total each increase
+        fill(255, 255, 255);
+        stroke(255, 255, 255);
+        rect(1,20,150,20); //Covers previous user betting amount
+        fill(0, 0, 0);
+        text("Current Bet = " + tempBet, 10, 30);//Displays current bet amount
+    }
+    
+    if (mouseX >= 260 && mouseX <= 303 && mouseY >=262 && mouseY <=304) { //$15 Chip Button
+        
+        fill(0, 0, 0);
+        tempBet += 15;
+        userTotal -= 15;
+        fill(255, 255, 255);
+        stroke(255, 255, 255);
+        rect(1,0,150,20); //Covers previous user total amount
+        fill(0, 0, 0);
+        text("Your Funds = " + userTotal, 10,15); //Displays updated user total each increase
+        fill(255, 255, 255);
+        stroke(255, 255, 255);
+        rect(1,20,150,20); //Covers previous user betting amount
+        fill(0, 0, 0);
+        text("Current Bet = " + tempBet, 10, 30);//Displays current bet amount
+    }
+    
+    if (mouseX >= 316 && mouseX <= 369 && mouseY >=225 && mouseY <=300) { //$20 Chip Button
+        
+        fill(0, 0, 0);
+        tempBet += 20;
+        userTotal -= 20;
+        fill(255, 255, 255);
+        stroke(255, 255, 255);
+        rect(1,0,150,20); //Covers previous user total amount
+        fill(0, 0, 0);
+        text("Your Funds = " + userTotal, 10,15); //Displays updated user total each increase
+        fill(255, 255, 255);
+        stroke(255, 255, 255);
+        rect(1,20,150,20); //Covers previous user betting amount
+        fill(0, 0, 0);
+        text("Current Bet = " + tempBet, 10, 30);//Displays current bet amount
+    }
+};
