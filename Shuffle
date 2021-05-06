@@ -1,12 +1,9 @@
- function shuffle()
+function shuffle(Cards)
     {
-        for (var i = 0; i < 1000; i++) //for the next 1000 hands, the two cards will be shuffled into random spots in the deck
-        {
-            var cardPlacement1 = (random(0,52) * deck.length);
-            var cardPlacement2 = (random(0,52) * deck.length);
-            var spot = deck[cardPlacement1];
-
-            deck[cardPlacement1] = deck[cardPlacement2];
-            deck[cardPlacement2] = spot;
-        }
+        for (var i = Cards.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = Cards[i];
+        Cards[i] = Cards[j];
+        Cards[j] = temp;
     }
+}
