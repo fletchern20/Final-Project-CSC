@@ -1,0 +1,26 @@
+var newPlayers = [ 
+    {
+        title: "Player One", //Player Title
+        hand: 0, //Stores cards in hand
+        handValue: 0, //Stores values of cards in hand
+        playerNumber: 1, //ID used to swap between players
+        score: 0,  //Keeps count of rounds won
+        currentBet: 0, //Tracks of the current bet each round
+        totalFunds: 100, //Tracks total amount of money player has
+    },
+    
+    {
+        title: "Player Two", //Player Title
+        hand: 0, //Stores cards in hand
+        handValue: 0, //Stores values of cards in hand
+        playerNumber: 2, //ID used to swap between players
+        score: 0, //Keeps count of rounds won
+        currentBet: 0, //Keeps track of the current bet each round
+        totalFunds: 100, //Tracks total amount of money player has
+    },
+    
+]; //Creates two players
+
+var i = 0; //Keeps track of which player is betting (0 = PlayerOne, 1 = PlayerTwo)
+
+var currentPlayer = 0;
