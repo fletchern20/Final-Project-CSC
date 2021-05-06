@@ -1,25 +1,269 @@
-    var faces = ["Spades", "Hearts", "Diamonds", "Clubs"];
-    var cardNumbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"];
-    var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11];
-
-    function makeDeck()
+var Cards = [ 
     {
-        var deck = [];
-        for (var i = 0 ; i < cardNumbers.length; i++)
-        {
-            for(var y = 0; y < faces.length; y++)
-            {
-            var card = {Value: cardNumbers[y], Face: faces[i]};
-			deck.push(card);
-            }
-            if (cardNumbers[i] === "J" || cardNumbers[i] === "Q" || cardNumbers[i] === "K")
-                    {
-                        values = [11];
-                    }
-            if (cardNumbers[i] === "A")
-                    {
-                        values = [12];
-                    }
-        }
-        return deck;
-    }
+        face: "Spade", //Stores face
+        cardNumber: 2, //Stores cards number
+        value: 2, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: 3, //Stores cards number
+        value: 3, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: 4, //Stores cards number
+        value: 4, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: 5, //Stores cards number
+        value: 5, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: 6, //Stores cards number
+        value: 6, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: 7, //Stores cards number
+        value: 7, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: 8, //Stores cards number
+        value: 8, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: 9, //Stores cards number
+        value: 9, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: 10, //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: "J", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: "Q", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        face: "Spade", //Stores face
+        cardNumber: "K", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+    {
+       face: "Spade", //Stores face
+       cardNumber: "A", //Stores cards number
+       value: 11, //Stores values of cards 
+    },
+    {
+        suit: "Heart", //Stores suit
+        cardNumber: 2, //Stores cards number
+        value: 2, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: 3, //Stores cards number
+        value: 3, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: 4, //Stores cards number
+        value: 4, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: 5, //Stores cards number
+        value: 5, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: 6, //Stores cards number
+        value: 6, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: 7, //Stores cards number
+        value: 7, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: 8, //Stores cards number
+        value: 8, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: 9, //Stores cards number
+        value: 9, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: 10, //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: "J", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: "Q", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        suit: "Heart", //Stores suit
+        cardNumber: "K", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+    {
+       suit: "Heart", //Stores suit
+       cardNumber: "A", //Stores cards number
+       value: 11, //Stores values of cards 
+    },
+    {
+        suit: "Club", //Stores suit
+        cardNumber: 2, //Stores cards number
+        value: 2, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: 3, //Stores cards number
+        value: 3, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: 4, //Stores cards number
+        value: 4, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: 5, //Stores cards number
+        value: 5, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: 6, //Stores cards number
+        value: 6, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: 7, //Stores cards number
+        value: 7, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: 8, //Stores cards number
+        value: 8, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: 9, //Stores cards number
+        value: 9, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: 10, //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: "J", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: "Q", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        suit: "Club", //Stores suit
+        cardNumber: "K", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+    {
+       suit: "Club", //Stores suit
+       cardNumber: "A", //Stores cards number
+       value: 11, //Stores values of cards 
+    },
+    {
+        suit: "Diamond", //Stores suit
+        cardNumber: 2, //Stores cards number
+        value: 2, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: 3, //Stores cards number
+        value: 3, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: 4, //Stores cards number
+        value: 4, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: 5, //Stores cards number
+        value: 5, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: 6, //Stores cards number
+        value: 6, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: 7, //Stores cards number
+        value: 7, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: 8, //Stores cards number
+        value: 8, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: 9, //Stores cards number
+        value: 9, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: 10, //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: "J", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: "Q", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+     {
+        suit: "Diamond", //Stores suit
+        cardNumber: "K", //Stores cards number
+        value: 10, //Stores values of cards 
+    },
+    {
+       suit: "Diamond", //Stores suit
+       cardNumber: "A", //Stores cards number
+       value: 11, //Stores values of cards 
+    },
+    ];
+
+
+
+
+
+
+
