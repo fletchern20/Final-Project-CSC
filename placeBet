@@ -1,3 +1,22 @@
+background(20, 42, 69); //Background color (navy blue)
+
+fill(250, 250, 250);
+stroke(178, 195, 255);
+rect(25,94,350,118); //Card zone
+
+fill(213, 212, 230);
+stroke(175, 183, 209);
+rect(195,98,2,110); //Card zone seperator
+
+fill(23, 41, 99);
+text("Player 1", 83, 111); //Player 1 Card zone Marker
+
+fill(23, 41, 99);
+text("Player 2", 264, 111); //Player 2 Card zone Marker
+
+fill(255, 255, 255);
+text("Chips:", 265, 243); //Chips section title
+
 fill(87, 225, 235); // Chip Designs
 stroke(111, 153, 181);
 
