@@ -24,3 +24,29 @@ var newPlayers = [
 var i = 0; //Keeps track of which player is betting (0 = PlayerOne, 1 = PlayerTwo)
 
 var currentPlayer = 0;
+
+draw = function() {
+    fill(252, 252, 252);
+    rect(10,67,96,16);
+    rect(293,67,96,16);
+    fill(0, 0, 0);
+    text(newPlayers[0].title+":",13,79);
+    text(newPlayers[0].handValue,85,78.5);
+    text(newPlayers[1].title+":",298,79);
+    text(newPlayers[1].handValue,374,78.5);
+
+    
+    if (newPlayers[0].handValue > 21) {
+        fill(255, 255, 255);
+        rect(144,216,116,20);
+        fill(255, 0, 0);
+        text(newPlayers[0].title + " busted!", 147, 231);
+    }
+    if (newPlayers[1].handValue > 21) {
+        fill(255, 255, 255);
+        rect(144,216,116,20);       
+        fill(255, 0, 0);
+        text(newPlayers[1].title + " busted!", 147, 231);
+        
+    }
+};
