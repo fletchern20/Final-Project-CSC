@@ -92,14 +92,74 @@ var btn1 = new Button({
     noStroke();
 };
 
+var drawBody = function (bodyX, bodyY, bodyH) {
+   
+fill(140, 77, 54); // Neck
+rect(bodyX-25*bodyH/100,bodyY-65*bodyH/100,31*bodyH/100,bodyH-58*bodyH/100,10);
+
+fill(0, 0, 0); // Beard
+arc(bodyX-10*bodyH/100,bodyY-65*bodyH/100,75*bodyH/100,bodyH-45*bodyH/100,-416,-152);
+
+fill(173, 119, 73); // Face
+ellipse(bodyX-12*bodyH/100, bodyY-105*bodyH/100, 105*bodyH/100, bodyH+16*bodyH/100);
+   
+fill(43, 43, 43);    
+quad(bodyX-78*bodyH/100, bodyY+46*bodyH/100, bodyX+49*bodyH/100, bodyY+47*bodyH/100, bodyX+36*bodyH/100, bodyY-31*bodyH/100, bodyX-59*bodyH/100, bodyY-34*bodyH/100); // Body
+
+};
+
+var drawFace = function (bodyX, bodyY, bodyH) {
+noStroke();
+fill(173, 119, 73);  // Ears
+ellipse(bodyX-64*bodyH/100, bodyY-108*bodyH/100, 12*bodyH/100, bodyH-76*bodyH/100);
+ellipse(bodyX+40*bodyH/100, bodyY-106*bodyH/100, 12*bodyH/100, bodyH-76*bodyH/100);
+
+noStroke();
+fill(107, 55, 10);
+arc(bodyX+-13*bodyH/100, bodyY+-90*bodyH/100, 15*bodyH/100, bodyH-109*bodyH/100, -127, 60); // Nose
+
+fill(255, 255, 255); // Eyes, Mouth
+ellipse(bodyX-33*bodyH/100, bodyY-107*bodyH/100, 24*bodyH/100, bodyH-81*bodyH/100);
+ellipse(bodyX+10*bodyH/100, bodyY-107*bodyH/100, 24*bodyH/100, bodyH-81*bodyH/100);
+fill(250, 105, 105);  
+arc(bodyX-11*bodyH/100, bodyY-79*bodyH/100, 30*bodyH/100, bodyH-70*bodyH/100, -2, 184);
+
+fill(56, 25, 8); // Pupils
+ellipse(bodyX-33*bodyH/100,bodyY-106*bodyH/100,7*bodyH/100,bodyH-90*bodyH/100);
+ellipse(bodyX+10*bodyH/100,bodyY-106*bodyH/100,7*bodyH/100,bodyH-90*bodyH/100);
+
+fill(43, 43, 43); // Eyebrows and Hats
+arc(bodyX-39*bodyH/100,bodyY-125*bodyH/100,15*bodyH/100,bodyH-90*bodyH/100,-222,-7);
+arc(bodyX+13*bodyH/100,bodyY-125*bodyH/100,15*bodyH/100,bodyH-90*bodyH/100,-175,29);
+arc(bodyX-12*bodyH/100,bodyY-131*bodyH/100,95*bodyH/100,bodyH-19*bodyH/100,-185,-7);
+
+};
+
+var drawInitials = function (bodyX, bodyY, bodyH) {
+   
+fill(255, 255, 255); // Text
+textSize(bodyH-68*bodyH/100);
+text("AQ", bodyX-35*bodyH/100, bodyY+15*bodyH/100);
+
+};
+
+var drawAaronBitmoji = function (bodyX, bodyY, bodyH) {
+   
+ }; // Function to call my Bitmoji
+
 var introScreen = function(){
     fill(143, 81, 81);
     rect(0, 0, 400, 400);
     drawBitmoji(79, 67, 100);
+    drawBody(332, 173, 100);
+    drawFace(332, 173, 100);
+    drawInitials(332, 173, 100);
     textSize(21);
     fill(250, 245, 245);
     textAlign(CENTER, CENTER);
-    text("Black Jack", 200, 90);
+    text("Black Jack", 192, 100);
+    text("Aaron", 192, 40);
+    text(" and Nolan's", 192, 70);
     textSize(10);
     text("The goal of blackjack is to beat the dealer's hand without going over 21.", 200,       240);
     text("Face cards are worth 10.", 200, 260);
