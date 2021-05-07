@@ -1,9 +1,9 @@
-function shuffle(Cards)
+function shuffle(Cards) //function to shuffle cards
     {
-        for (var i = Cards.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = Cards[i];
-        Cards[i] = Cards[j];
-        Cards[j] = temp;
+        for (var i = Cards.length - 1; i > 0; i--) { //shuffles the cards into various positions of the array
+        var j = Math.floor(Math.random() * (i + 1)); //random numbers for sports in the array
+        var temp = Cards[i]; //makes a variable temp for position
+        Cards[i] = Cards[j]; 
+        Cards[j] = temp; 
     }
 }
