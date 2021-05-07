@@ -40,30 +40,83 @@ var btn1 = new Button({
     }
 });
 
+    var drawBitmoji = function(x, y, h) //draws bitmoji
+{
+    fill(15, 165, 219);
+    noStroke();
+    arc(x*h/100, y+73*h/100, 8*h/1004, 81*h/100, -179, 0); //hood
+    noStroke();
+    fill(255, 220, 180); //skin tone
+    ellipse(x*h/100, y*h/100, 90*h/119, 100*h/100); //head
+    fill(140, 115, 115);
+    noStroke();
+    fill(0, 115, 255); //eye color
+    ellipse(x-14*h/100, y*h/100, 6*h/100, 4*h/100); //left eye
+    ellipse(x+18*h/100, y*h/100, 6*h/100, 4*h/100); //right eye
+    fill(255, 220, 180);
+    stroke(0, 0, 0);
+    strokeWeight(1);
+    bezier(x*h/100, y*h/100, x+20*h/100, y+20*h/100, x-10*h/100, y+20*h/100, x-5*h/100, y+15     *h/100); //nose
+    fill(230, 110, 158); 
+    arc(x-1*h/100, y+27*h/100, 26*h/100, 4*h/100, 0, 178); //mouth
+    arc(x-1*h/100, y+27*h/100, 26*h/100, -4*h/100, 0, 186); //mouth
+    fill(145, 138, 150);
+    stroke(194, 14, 194);
+    strokeWeight(3);
+    arc(x-1*h/100, y-19*h/100, 77*h/100, -77*h/100, 2, 180); //hat
+    fill(194, 14, 194);
+    line(x-53*h/100, y-18*h/100, x+38, y-19); //brim
+    fill(15, 165, 219);
+    noStroke();
+    rect(x-73, y+56, 146*h/100, 100*h/100, 202*h/100);         //shirt
+    fill(255, 220, 180);
+    ellipse(x-38*h/100, y*h/100, 11*h/100, 20*h/100);//left ear
+    ellipse(x+37*h/100, y*h/100, 11*h/100, 20*h/100);//right ear
+    fill(209, 151, 107);
+    arc(x-18*h/100, y-10*h/100, 17*h/100, 5*h/100, 2, 132); //left     eyebrow
+    arc(x+16*h/100, y-8*h/100, 17*h/100, -5*h/100, -2, 132);           //right eyebrow
+    arc(x+38*h/100, y+5*h/100, 22*h/100, 48*h/100, 241, 270);         //right eyebrow
+    arc(x-36*h/100, y+8*h/100, 22*h/100, 48*h/100, 257, 287);         //right eyebrow
+    fill(255, 220, 180);
+    quad(x-39*h/100, y+64*h/100, x+40*h/100, y+64*h/100, x+9*h/100, y+40*h/100, x-14*h/100,      y+45*h/100); //neck
+    fill(15, 165, 219);
+    noStroke();
+    arc(x*h/100, y+73*h/100, 84*h/100, 81*h/100, -42, 0); //collor
+    fill(15, 165, 219);
+    noStroke();
+    arc(x*h/100, y+73*h/100, 84*h/100, 81*h/100, -200, -137);         //collar
+    fill(15, 45, 89);
+    text("NF", x+22*h/100, y+92*h/100, 100, 100);
+    fill(194, 14, 194);
+    text("S", x-5*h/100, y-41*h/100, 100, 100); 
+    noStroke();
+};
+
 var introScreen = function(){
     fill(143, 81, 81);
     rect(0, 0, 400, 400);
-    textSize(45);
+    drawBitmoji(79, 67, 100);
+    textSize(21);
     fill(250, 245, 245);
     textAlign(CENTER, CENTER);
-    text("Black Jack", 200, 117);
+    text("Black Jack", 200, 90);
     textSize(10);
-    text("The goal of blackjack is to beat the dealer's hand without going over 21.", 200,       198);
-    text("Face cards are worth 10.", 200, 225);
-    text("Each player starts with two cards, one of the dealer's cards is hidden until the end.", 200, 250);
-    text("To 'Hit' is to ask for another card.", 200, 278);
-    text("If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.",     200, 304);
+    text("The goal of blackjack is to beat the dealer's hand without going over 21.", 200,       240);
+    text("Face cards are worth 10.", 200, 260);
+    text("Each player starts with two cards, one of the dealer's cards is hidden until the end.", 200, 280);
+    text("To 'Hit' is to ask for another card.", 200, 300);
+    text("If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.",     200, 320);
     btn1.draw();
 };
 
-//When mouse is clicked and released on the button the game starts
+//When ever the mouse is released I will check every tile if the mouseX and mouseY values are inside
 mouseReleased = function() {
 if (currentScene === 0) {
     btn1.handleMouseClick();
 }
 };
 
-//draws the introscreen
+//Loops 30 times a second to show content on the screen
 draw = function() {
 if (currentScene === 0) {
     introScreen();
