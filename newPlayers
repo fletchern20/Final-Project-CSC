@@ -1,5 +1,5 @@
 var newPlayers = [ 
-//Aaron Qureshi    
+ 
     {
         title: "Player One", //Player Title
         hand: 0, //Stores cards in hand
