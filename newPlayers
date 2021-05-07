@@ -1,4 +1,5 @@
 var newPlayers = [ 
+//Aaron Qureshi    
     {
         title: "Player One", //Player Title
         hand: 0, //Stores cards in hand
@@ -20,6 +21,19 @@ var newPlayers = [
     },
     
 ]; //Creates two players
+
+var checkBust = function (z) {
+    if (z === 0) {
+        if (newPlayers[0].handValue > 21) {
+        text(newPlayers[0].title + " Busted! " + newPlayers[1].title + " wins!",200,200);
+        }
+    }
+    if (z === 1) {
+        if (newPlayers[1].handValue > 21) {
+        text(newPlayers[1].title + " Busted! " + newPlayers[0].title + " wins!",200,200);
+        }
+    }
+};
 
 var i = 0; //Keeps track of which player is betting (0 = PlayerOne, 1 = PlayerTwo)
 
