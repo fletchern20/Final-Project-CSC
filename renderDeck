@@ -1,3 +1,4 @@
+var hitCount = 0; //Tracks amount of times hit button has been used
 var hitBtn = new Button({
     x: 15,
     y: 274,
